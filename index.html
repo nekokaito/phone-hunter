@@ -17,9 +17,9 @@
             </div>
             <div class="flex-none gap-2">
               <div class="form-control">
-                <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+                <input id="phone_search" type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
               </div>
-              <button class="btn btn-outline btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button id="search_btn" class="btn btn-outline btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
               <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">
@@ -45,8 +45,14 @@
 
     </header>
 
-    <main>
+    <main class="container mx-auto">
+       <section>
 
+         <div id="phone-box" class="grid grid-rows-4 grid-flow-col gap-4">
+        </div>
+
+
+       </section>
     </main>
 
     <footer>    
