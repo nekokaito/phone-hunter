@@ -33,6 +33,7 @@ const displayPhone = phones => {
               <button onclick="moreDetails('${phone.slug}')" class="btn btn-primary">Details</button>
             </div>
           </div>
+          
     `
     phoneDiv.appendChild(phoneCard);
    });
@@ -68,9 +69,7 @@ const loading = (isYes) => {
     else {
       loadingDiv.classList.add('hidden');
     }
-
-
-
+  
 }
 
 
