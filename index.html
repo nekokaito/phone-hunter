@@ -19,7 +19,7 @@
               <div class="form-control">
                 <input id="phone_search" type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
               </div>
-              <button onclick="loadPhone()" id="search_btn" class="btn btn-outline btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button onclick="searchBox()" id="search_btn" class="btn btn-outline btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
               <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">
@@ -42,17 +42,49 @@
     </nav>
 
     <header>
-
+      <div class="carousel w-full">
+        <div id="slide1" class="carousel-item relative w-full">
+          <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" class="w-full" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" class="btn btn-circle">❮</a> 
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
+        </div> 
+        <div id="slide2" class="carousel-item relative w-full">
+          <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" class="w-full" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" class="btn btn-circle">❮</a> 
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+        </div> 
+        <div id="slide3" class="carousel-item relative w-full">
+          <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" class="w-full" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" class="btn btn-circle">❮</a> 
+            <a href="#slide4" class="btn btn-circle">❯</a>
+          </div>
+        </div> 
+        <div id="slide4" class="carousel-item relative w-full">
+          <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" class="w-full" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" class="btn btn-circle">❮</a> 
+            <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="container mx-auto">
        <section>
-
+        <div id="loading" class="text-center my-56 hidden">
+          <span class="loading loading-infinity loading-lg"></span>
+        </div>
          <div id="phone-box" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
         </div>
         
-        <div id="next-box" class="hidden">
-          
+        <div id="next-box" class="hidden mt-5 text-center">
+          <button class="btn btn-outline btn-primary">Next</button>
         </div>
 
        </section>

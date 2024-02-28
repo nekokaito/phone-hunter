@@ -3,12 +3,21 @@ const loadPhone = async (text) => {
     const data = await response.json();
     const phones = data.data;
      displayPhone(phones);
+     
 }
 
 const displayPhone = phones => {
    const phoneDiv = document.getElementById('phone-box');
+   const nextDiv = document.getElementById('next-box');
    phoneDiv.innerHTML = '';
     console.log(phones.length);
+    if (phones.length > 9) {
+          nextDiv.classList.remove('hidden');
+    }
+    else {
+      nextDiv.classList.add('hidden')
+    }
+    phones = phones.slice(0,9);
    phones.forEach(phone => {
             const phoneCard = document.createElement('div');
             console.log(phone);
@@ -27,17 +36,34 @@ const displayPhone = phones => {
     `
     phoneDiv.appendChild(phoneCard);
    });
-
+  
+   loading(false);
    
 }
 
 const searchBox = () => {
   
+  loading(true);
   const searchText = document.getElementById('phone_search');
   const searchContent = searchText.value;
 
   loadPhone(searchContent);
+  
 
 }
-document.getElementById('phone_search').addEventListener('input', searchBox);
+
+const loading = (isYes) => {
+    const loadingDiv = document.getElementById('loading');
+    
+    if (isYes) {
+      loadingDiv.classList.remove('hidden');
+    }
+    else {
+      loadingDiv.classList.add('hidden');
+    }
+
+
+
+}
+
 
