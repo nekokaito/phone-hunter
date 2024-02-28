@@ -8,7 +8,7 @@ const loadPhone = async (text) => {
 
 const displayPhone = phones => {
    const phoneDiv = document.getElementById('phone-box');
-
+   
    phones.forEach(phone => {
             const phoneCard = document.createElement('div');
             phoneCard.classList = 'card w-96 bg-gray-100 shadow-xl';
@@ -27,7 +27,17 @@ const displayPhone = phones => {
     phoneDiv.appendChild(phoneCard);
    });
 
+   searchBox();
+}
 
+const searchBox = () => {
+  const phoneDiv = document.getElementById('phone-box');
+  const searchText = document.getElementById('phone_search');
+  const searchContent = searchText.value;
+ if (searchContent === '') {
+  phoneDiv.innerHTML = '';
+ }
+  loadPhone(searchContent);
 
 }
 
