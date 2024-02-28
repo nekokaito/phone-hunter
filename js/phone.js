@@ -30,7 +30,7 @@ const displayPhone = phones => {
             <h2 class="card-title">${phone.phone_name}</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions">
-              <button class="btn btn-primary">Buy Now</button>
+              <button onclick="moreDetails('${phone.slug}')" class="btn btn-primary">Details</button>
             </div>
           </div>
     `
@@ -51,6 +51,13 @@ const searchBox = () => {
   
 
 }
+
+const moreDetails = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+    const data = await res.json();
+    console.log(data.data);
+}
+
 
 const loading = (isYes) => {
     const loadingDiv = document.getElementById('loading');
